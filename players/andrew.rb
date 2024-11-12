@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-require "pry"
-
 
 Player.register("Andrew Rodger") do |games|
   opposition_choices = games.map do |game|

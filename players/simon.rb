@@ -11,8 +11,8 @@ Player.register("simon") do |history|
   my_most_common_move = my_moves.max_by { |move| my_moves.count(move) }
   their_most_common_move = their_moves.max_by { |move| their_moves.count(move) }
   if my_most_common_move == their_most_common_move
-    my_most_common_move == "share" ? "share" : "steal"
+    my_most_common_move == :share ? :share : :steal
   else
-    their_most_common_move == "share" ? "steal" : "share"
+    their_most_common_move == :share ? :steal : :share
   end
 end

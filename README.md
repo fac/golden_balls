@@ -11,7 +11,7 @@ At the end we'll see who beat who, and who earned the most money overall.
 # How to play
 1. Clone the repo
 2. Run `bundle install`
-3. Create a file in the contests folder with your name `<your_name>.rb`
+3. Create a file in the players folder with your name `<your_name>.rb`
 4. Add `Player.register("<your_name>") do |history| ... end`, you can see an example in `random.rb`
 5. Implement your strategy in the block, you'll be given the history of all the games you've played with the other player.
 6. Return either "share" or "steal" from the block.

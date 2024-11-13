@@ -21,10 +21,10 @@ describe "players" do
       it "can make a turn for #{player}" do
         1000.times do
           history = [
-            { player => :share, "greg" => :share },
-            { player => :steal, "greg" => :steal },
-            { player => :share, "greg" => :steal },
-            { player => :steal, "greg" => :share }
+            { own: :share, other: :share },
+            { own: :steal, other: :steal },
+            { own: :share, other: :steal },
+            { own: :steal, other: :share }
           ].shuffle
           expect(Player.players[player].call(history)).to be_truthy
         end

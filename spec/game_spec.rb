@@ -17,7 +17,8 @@ describe Game do
 
       expect(game.player1_score).to eq(0)
       expect(game.player2_score).to eq(3000)
-      expect(game.history).to eq([{ "a" => :share, "b" => :steal }] * 1000)
+      expect(game.player1_history).to eq([{ :own => :share, :other => :steal }] * 1000)
+      expect(game.player2_history).to eq([{ :other => :share, :own => :steal }] * 1000)
     end
   end
 end

@@ -5,6 +5,6 @@ Player.register("whatapalaver") do |history|
   if history.empty?
     loaded_options.sample
   else
-    history.last.reject { |name, _move| name == "whatapalaver" }.values.last == :steal ? :steal : loaded_options.sample
+    history.last.reject { |name, _move| name == :own }.values.last == :steal ? :steal : loaded_options.sample
   end
 end

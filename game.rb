@@ -16,9 +16,10 @@ class Game
   end
 
   def play_round
-    player1_choice = Player.players[@player1].call(history.dup)
-    player2_choice = Player.players[@player2].call(history.dup)
-    history << { player1 => player1_choice, player2 => player2_choice }
+    player1_choice = Player.players[@player1].call(player1_history.dup)
+    player2_choice = Player.players[@player2].call(player2_history.dup)
+    player1_history << { own: player1_choice, other: player2_choice }
+    player2_history << { other: player1_choice, own:  player2_choice }
 
     case [player1_choice, player2_choice]
     when [:share, :share]
@@ -33,7 +34,11 @@ class Game
     end
   end
 
-  def history
-    @history ||= []
+  def player1_history
+    @player1_history ||= []
+  end
+
+  def player2_history
+    @player2_history ||= []
   end
 end

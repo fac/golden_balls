@@ -6,7 +6,7 @@ Player.register("Katie J") do |history|
   history.each do |game|
     game.each do |key, value|
       other_player_name = key
-      if key != "Katie J"
+      if key != :own
         other_player_moves << value
       else
         my_moves << value
